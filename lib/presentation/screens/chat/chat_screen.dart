@@ -39,6 +39,7 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                controller: chatProvider.chatScrollController, // > Vinculo el controlador de scroll al controller del listview
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
@@ -48,7 +49,7 @@ class _ChatView extends StatelessWidget {
                 },
               ),
             ),
-            // Caja de texto de mensaje
+            // Caja de texto de mensaje (que viene de la carpeta shared)
             MessageFieldBox(
               // > Funcion callbak que será llamada desde el MessageFieldBox cuando se quiera enviar el mensaje
               //onValue: (value) => chatProvider.sendMessage(value),

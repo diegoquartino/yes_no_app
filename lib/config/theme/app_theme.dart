@@ -14,6 +14,7 @@ const List<Color> _colorTheme = [
 ];
 
 class AppTheme {
+  
   final int selectedColor;
 
   // Constructor

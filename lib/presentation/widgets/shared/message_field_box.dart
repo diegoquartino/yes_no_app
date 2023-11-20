@@ -13,6 +13,7 @@ class MessageFieldBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     final colors = Theme.of(context).colorScheme;
 
     /* Comentario sobre: TextEditingController
@@ -40,7 +41,7 @@ class MessageFieldBox extends StatelessWidget {
           onValue(textValue); 
           textController.clear();
           //focusNode.requestFocus();
-          print('Hice un onPressed');
+          //print('Hice un onPressed');
         },
       ),
     );
@@ -48,17 +49,17 @@ class MessageFieldBox extends StatelessWidget {
     return TextFormField(
       onTapOutside: (event) {
         if (!focusNode.hasFocus) {
-          print('No tengo el foco :(');
+          //print('No tengo el foco :(');
         } else {
           focusNode.unfocus();
-          print('Tengo el foco e hice un unfocus');
+          //print('Tengo el foco e hice un unfocus');
         }
       },
       focusNode: focusNode,
       controller: textController,
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        print('Hice un submit valor: $value');
+        //print('Hice un submit valor: $value');
         // > llamada a la funcion de callback que enviará el mensaje
         onValue(value);
         textController.clear();
